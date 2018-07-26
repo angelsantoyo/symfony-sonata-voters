@@ -1,0 +1,9 @@
+parameters:
+
+    avanza.locales: [es]
+    avanza.locales.default: es
+    locale: "%avanza.locales.default%"
+    
+    # Sonata Admin Options
+    sonata_admin.title:             "Admin App"
+    sonata_admin.logo_title:        /img/logo.png

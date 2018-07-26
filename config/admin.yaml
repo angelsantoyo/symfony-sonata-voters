@@ -1,0 +1,36 @@
+parameters:
+
+services:    
+
+            
+    app.admin.vehiculo:
+        class: App\Admin\VehiculoAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Vehiculos" }
+        arguments:
+            - ~
+            - App\Entity\Vehiculo
+            - ~
+        calls:
+            - [ setTranslationDomain, [admin]]   
+            - [ setSecurityTokenStorage, ["@security.token_storage"]]
+            - [ setAutorizationChecker, ["@security.authorization_checker"]]           
+        public: true   
+            
+    app.admin.concesionario:
+        class: App\Admin\ConcesionarioAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Concesionarios" }
+        arguments:
+            - ~
+            - App\Entity\Concesionario
+            - ~
+        calls:
+            - [ setTranslationDomain, [admin]]   
+            - [ setSecurityTokenStorage, ["@security.token_storage"]]
+            - [ setAutorizationChecker, ["@security.authorization_checker"]]           
+        public: true                
+            
+
+            
+          

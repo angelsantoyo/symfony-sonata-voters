@@ -1,0 +1,33 @@
+sonata_admin:
+    title: 'Sonata Admin'
+    
+    security:
+        handler: app.security.handler.voter
+        #handler: sonata.admin.security.handler.role    
+    
+    dashboard:
+        blocks:
+            - { type: sonata.admin.block.admin_list, position: left }
+            
+        groups:
+        
+            sonata.admin.group.app:
+                label:          Vehículos 
+                label_catalogue: SonataAdminBundle
+                icon:            '<i class="fa fa-car"></i>'
+                items:
+                    - app.admin.concesionario
+                    - app.admin.vehiculo
+                    
+            sonata.admin.group.administration:
+                label:           Users
+                label_catalogue: SonataAdminBundle
+                icon:            '<i class="fa fa-group"></i>'
+                items:
+                    - sonata.user.admin.user
+                    - sonata.user.admin.group                            
+
+sonata_block:
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts: [admin]
