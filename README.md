@@ -2,7 +2,7 @@
 
 Ejemplo de uso de Voters en Symfony 4 y Sonata Admin
 
-## Documentation
+## Documentación
 
 Puedes obtener más información y documentación en el siguiente enlace:
 
